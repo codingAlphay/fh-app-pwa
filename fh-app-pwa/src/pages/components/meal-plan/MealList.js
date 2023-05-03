@@ -6,6 +6,7 @@ import handler from '../../api/fetch';
 function MealList(props) {
     // API data is stored in the state
     const [data, setData] = useState([]);
+
     // Get today's date
     let today = new Date();
 
@@ -27,12 +28,14 @@ function MealList(props) {
 
     useEffect(() => {
     async function fetchData() {
+        // Fetch data from API
         const newData = await handler(`cafeteria/getcafeteriadata;from=${firstDayOfWeekFormatted};until=${lastDayOfWeekFormatted}`);
         setData(newData.cafeteriaData);
     }
     fetchData();
     }, []);
 
+    // Group the data by date
     const groupedData = data.reduce((acc, item, index) => {
         const lastGroup = acc[acc.length - 1];
         if (index === 0 || item.tag !== lastGroup.tag) {
@@ -45,6 +48,7 @@ function MealList(props) {
     
       return (
         <div className={styles.main}> 
+          {/* Map the grouped data to the ListEntry component */}
           {groupedData.map((group, index) => (
             <ListEntry group={group} key={index} />
           ))}
@@ -52,6 +56,7 @@ function MealList(props) {
       );
 }
 
+// Component for the list entries
 function ListEntry(props) {
     const date = new Date(props.group.tag);
     const options = { 
@@ -60,9 +65,10 @@ function ListEntry(props) {
         month: 'long', 
         day: 'numeric' 
     };
+
     const formattedDate = date.toLocaleDateString('de-DE', options);
-
-
+    
+    // Map the items to the description and price
     return (
         <div className={styles.listEntry} key={props.key}>
             <h2>{formattedDate.toLocaleUpperCase()}</h2>
