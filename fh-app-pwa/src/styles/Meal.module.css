@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
 .main{
     margin-left: 10vw;
     margin-right: 10vw;
@@ -17,6 +19,7 @@
 
 .description{
     display: flex;
+    padding-bottom: 1vh;
 }
 
 .line{
@@ -24,7 +27,12 @@
 }
 
 .line p{
-    padding-bottom: 2vh;
+    line-height: 3vh;
+}
+
+.line span{
+    font-weight: bold;
+    color: #b4b4b4;
 }
 
 .price{
@@ -32,4 +40,22 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    font-weight: bold;
+    font-size: 2vh;
+}
+
+.timeline{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 1vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding-top: 2vh;
+    font-weight: bolder;
+}
+
+.timeline hr{
+    width: 30vw;
+    border: 3px solid #008E4D;
 }

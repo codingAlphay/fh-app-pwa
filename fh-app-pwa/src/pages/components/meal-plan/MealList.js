@@ -6,10 +6,28 @@ import handler from '../../api/fetch';
 function MealList(props) {
     // API data is stored in the state
     const [data, setData] = useState([]);
+    // Get today's date
+    let today = new Date();
+
+    // Get the day of the week (0 = Sunday, 1 = Monday, etc.)
+    let dayOfWeek = today.getDay();
+
+    // Calculate the date of the first day of the week (Monday)
+    let firstDayOfWeek = new Date(today);
+    firstDayOfWeek.setDate(today.getDate() - dayOfWeek + (dayOfWeek === 0 ? -6 : 1));
+
+    // Calculate the date of the last day of the week (Sunday)
+    let lastDayOfWeek = new Date(today);
+    lastDayOfWeek.setDate(today.getDate() - dayOfWeek + 6 + (dayOfWeek === 0 ? -6 : 1));
+
+    // Format the dates as "dd.mm.yyyy"
+    let options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+    let firstDayOfWeekFormatted = firstDayOfWeek.toLocaleDateString('de-DE', options);
+    let lastDayOfWeekFormatted = lastDayOfWeek.toLocaleDateString('de-DE', options);
 
     useEffect(() => {
     async function fetchData() {
-        const newData = await handler("cafeteria/getcafeteriadata;from=01.05.2023;until=05.05.2023");
+        const newData = await handler(`cafeteria/getcafeteriadata;from=${firstDayOfWeekFormatted};until=${lastDayOfWeekFormatted}`);
         setData(newData.cafeteriaData);
     }
     fetchData();
@@ -26,7 +44,7 @@ function MealList(props) {
       }, []);    
     
       return (
-        <div className={styles.main}>
+        <div className={styles.main}> 
           {groupedData.map((group, index) => (
             <ListEntry group={group} key={index} />
           ))}
@@ -47,12 +65,12 @@ function ListEntry(props) {
 
     return (
         <div className={styles.listEntry} key={props.key}>
-            <h2>{formattedDate}</h2>
+            <h2>{formattedDate.toLocaleUpperCase()}</h2>
             {props.group.items.map((item, index) => (
                 <div className={styles.description}>
                     <div className={styles.line}>
                         <p key={index}>{item.name.split("\n")[0]}</p>
-                        <p key={index}>{item.name.split("\n")[1]}</p>
+                        <span key={index}>{item.name.split("\n")[1]}</span>
                     </div>
                     <div className={styles.price}>
                         <p>{item.price}</p>
@@ -61,10 +79,6 @@ function ListEntry(props) {
             ))}
         </div>
     );
-}
-
-function replaceWithBr(item) {
-    return item.replace(/\n/g, "<br />")
 }
 
 export default MealList;
