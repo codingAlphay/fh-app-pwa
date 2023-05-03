@@ -1,0 +1,35 @@
+.main{
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.listEntry{
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+.listEntry h2{
+    padding-bottom: 1vh;
+    font-size: 2.5vh;
+    color: #008E4D;
+}
+
+
+.description{
+    display: flex;
+}
+
+.line{
+    flex: 0.8;
+}
+
+.line p{
+    padding-bottom: 2vh;
+}
+
+.price{
+    flex: 0.2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
