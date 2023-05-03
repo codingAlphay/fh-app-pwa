@@ -7,8 +7,7 @@ export default async function handler(endpoint) {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json",
-            "Authorization": "Basic MjExMDY1MzE0MjpDYnJGQk4zamhwSw=="
+            "Accept": "application/json"
         }
       });
             
