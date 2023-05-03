@@ -1,0 +1,165 @@
+{
+  "LBL_SETTINGS": "Settings",
+  "LBL_BEGINNERSGUIDE": "Beginners Guide",
+  "LBL_INFOSCREEN": "Schedule",
+  "LBL_CAFE": "Meal",
+  "LBL_MESSAGES": "Messages",
+  "LBL_EXAMS": "Exams",
+  "LBL_BGUIDE": "Beginner's Guide",
+  "LBL_EVALUATION": "Evaluation",
+  "LBL_BGUIDE_HEADER": "Further information or documents you can find under following links:",
+  "LBL_BGUIDE_CONTENT": [
+    {
+      "LINK": "https://checkin.fh-kufstein.ac.at",
+      "AFTER_LINK": "for:",
+      "POINTS": [
+        "Confirmation of enrollment",
+        "Report",
+        "Parking permit",
+        "News",
+        "Lecturer portal"
+      ],
+      "AFTER_POINTS": "For the registration type in your student id and your password."
+    },
+    {
+      "LINK": "https://login.microsoftonline.com",
+      "AFTER_LINK": "for:",
+      "POINTS": [
+        "Webmail",
+        "Office 365",
+        "OneDrive"
+      ],
+      "AFTER_POINTS": "For the registration type in your student id followed by @fh-kufstein.ac.at and your password."
+    },
+    {
+      "LINK": "https://weblearn.fh-kufstein.ac.at",
+      "AFTER_LINK": "for:",
+      "POINTS": [
+        "Course documents",
+        "Library"
+      ],
+      "AFTER_POINTS": "For the registration type in your student id and your password."
+    }
+  ],
+  "LBL_BGUIDE_FOOTER": "If you have additional questions, please contact the respective contact person.",
+  "LBL_GRADES": "Grades",
+  "LBL_LECTURER": "Lecturer",
+  "LBL_ROOM": "Room",
+  "LBL_PASSWORDINPUT": "Password",
+  "LBL_PASSWORD_STRING": "Type in password",
+  "LBL_PASSWORD_MESSAGE": "You must enter your password to view this.",
+  "LBL_SEMESTER": "Period",
+  "BTN_COMMIT": "Commit",
+  "MRK_EXAM": "EXAM",
+  "BTN_TODAY": "Today",
+  "BTN_MONTH": "Month",
+  "BTN_WEEK": "Week",
+  "LBL_PERSNR": "Personnumber",
+  "LBL_LECTORNAME": "Lectorname",
+  "LBL_PASSWORD": "Password",
+  "LBL_GROUP": "Group",
+  "LBL_FILTER_TITLE": "Filter Settings",
+  "LBL_PKZ": "PKZ",
+  "LBL_STUDY": "Study",
+  "BTN_LOGIN": "Login",
+  "BTN_APPLY": "Apply",
+  "LBL_MAINFOOD": "Main 4€",
+  "LBL_SOUP": "Soup 2€",
+  "LBL_SALAD": "Salad 2.20€",
+  "LBL_STUDENT": "Student",
+  "LBL_YESTERDAY": "Yesterday",
+  "NOLECTURES": "No lectures",
+  "LBL_NOMESSAGE": "No messages",
+  "ERROR_LOGIN": "Error on login!",
+  "MESSAGE_LOGIN": "Type in your correct PKZ and password!",
+  "MESSAGE_LOGIN_LEC": "Type in your name!",
+  "MESSAGE_PW_LOGIN": "Type in your password!",
+  "LBL_SEMESTER_HEADER_SUMMER": "Summer Term",
+  "LBL_SEMESTER_HEADER_WINTER": "Winter Term",
+  "LBL_LANGUAGE": "Language",
+  "LBL_EFFECTS": "Effectsceme",
+  "LBL_PUSH": "notifications",
+  "FB_TEXT": "Here you can report us errors or change requests. Please describe in detail the error or the concern. Of course, you can also praise us for something you like in the new app. :)",
+  "FB_MAIL": "Studentmail Adress",
+  "FB_FEEDBACK": "Feedback",
+  "FB_SEND": "Send Feedback",
+  "FB_ERROR": "Error on sending your feedback!",
+  "FB_SUCCESS": "Thank you for your feedback!",
+  "LBL_CACHEDDATA": "You have no internet connection, your last saved data was loaded",
+  "MSG_GRADE": "New grade",
+  "MSG_LECTURE": "Lecture has moved",
+  "MSG_ADMIN": "Adminstration",
+  "MSG_INFO": "Information",
+  "MESSAGE_NEW": "New Message",
+  "MESSAGE_IGNORE": "Ignore",
+  "MESSAGE_VIEW": "View",
+  "DAYS": {
+    "MONDAY": "Monday",
+    "TUESDAY": "Tuesday",
+    "WEDNESDAY": "Wednesday",
+    "THURSDAY": "Thursday",
+    "FRIDAY": "Friday",
+    "SATURDAY": "Saturday",
+    "SUNDAY": "Sunday"
+  },
+  "MONTHS": {
+    "JAN": "January",
+    "FEB": "February",
+    "MAR": "March",
+    "APR": "April",
+    "MAI": "May",
+    "JUN": "June",
+    "JUL": "July",
+    "AUG": "August",
+    "SEP": "September",
+    "OCT": "October",
+    "NOV": "November",
+    "DEC": "December"
+  },
+  "DAYLABELS": [
+    "MO",
+    "TU",
+    "WE",
+    "TH",
+    "FR",
+    "SA",
+    "SU"
+  ],
+  "LBL_SYNC_ERROR": "Synchronization error. Please check your data connection!",
+  "LBL_GENERAL_CONNECTION_ERROR": "Cannot connect to server!",
+  "LBL_RELOGIN_WARN": "Please re-login with your PKZ and password",
+  "LBL_EVAL": "Evaluation",
+  "LBL_EVAL_SUBMIT": "Submit",
+  "LBL_EVAL_SUBMITTING": "Submitting...",
+  "LBL_EVAL_VALID_UNTIL": "Valid until: ",
+  "LBL_EVAL_CANCEL": "Cancel",
+  "LBL_OEH": "Students' Association",
+  "LBL_OEH_HEADER": "Further information or documents you can find under following links:",
+  "LBL_OEH_CONTENT": [
+    {
+      "LINK": "http://www.oeh-fhkufstein.at",
+      "AFTER_LINK": "for:",
+      "POINTS": [
+        "Austrian Students' Association News"
+      ],
+      "AFTER_POINTS": ""
+    },
+    {
+      "LINK": "http://www.oeh-fhkufstein.at/events",
+      "AFTER_LINK": "for:",
+      "POINTS": [
+        "Austrian Students' Association Events"
+      ],
+      "AFTER_POINTS": ""
+    },
+    {
+      "LINK": "http://www.oeh-fhkufstein.at/sportprogramm",
+      "AFTER_LINK": "for:",
+      "POINTS": [
+        "Austrian Students' Association Sports Programme"
+      ],
+      "AFTER_POINTS": ""
+    }
+  ],
+  "LBL_OEH_FOOTER": "If you have additional questions, please contact the respective contact person."
+}
