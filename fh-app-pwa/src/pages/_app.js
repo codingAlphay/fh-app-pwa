@@ -11,6 +11,9 @@ import Paper from '@mui/material/Paper';
 import { createTheme } from '@mui/material/styles';
 import { useEffect, useState } from "react";
 
+// Labels
+const labels = require('../../public/assets/json/json_en/labels.json');
+
 // Toast Notifications
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
@@ -24,7 +27,7 @@ export default function App({ Component, pageProps }) {
     // Check if the user is connected to the internet
     if (!navigator.onLine) {
       // If the user is offline, let them know
-      toast("You are offline. Please check your internet connection.", { hideProgressBar: true, autoClose: 2000, type: 'error' });
+      toast(`${labels.LBL_CACHEDDATA}`, { hideProgressBar: true, autoClose: 2000, type: 'error' });
     }
   }, []);
 
