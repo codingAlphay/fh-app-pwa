@@ -78,7 +78,7 @@ function ListEntry(props) {
     // Map the items to the description and price
     return (
         <div className='my-16'>
-            <h2 className='text-12 text-green'>{formattedDate.toLocaleUpperCase()}</h2>
+            <h2 className='text-12 text-green font-bold'>{formattedDate.toLocaleUpperCase()}</h2>
             {props.group.items.map((item, index) => (
                 <div className='flex pb-4'>
                     <div className={styles.line}>
