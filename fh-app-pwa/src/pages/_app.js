@@ -11,9 +11,25 @@ import Paper from '@mui/material/Paper';
 import { createTheme } from '@mui/material/styles';
 import { useEffect, useState } from "react";
 
+// Labels
+const labels = require('../../public/assets/json/json_en/labels.json');
+
+// Toast Notifications
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import { toast } from "react-toastify";
+
 
 export default function App({ Component, pageProps }) {
   const [value, setValue] = React.useState(0); // Bottom Navigation
+
+  useEffect(() => {
+    // Check if the user is connected to the internet
+    if (!navigator.onLine) {
+      // If the user is offline, let them know
+      toast(`${labels.LBL_CACHEDDATA}`, { hideProgressBar: true, autoClose: 2000, type: 'error' });
+    }
+  }, []);
 
   return (
     <>
@@ -44,6 +60,7 @@ export default function App({ Component, pageProps }) {
         <link rel="apple-touch-icon" href="/apple-icon.png"></link>
         <meta name="theme-color" content="#317EFB" />
       </Head>
+      <ToastContainer />
       <Component {...pageProps} />
 
       {/* Bottom Navigation, only visible on mobile size */}
