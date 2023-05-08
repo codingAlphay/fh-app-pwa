@@ -2,10 +2,14 @@ import React from 'react';
 import styles from '@/styles/Meal.module.css';
 import { useEffect, useState } from "react";
 import handler from '../../api/fetch';
+import language from '../../api/Language';
 
 function MealList(props) {
-    // API data is stored in the state
-    const [data, setData] = useState([]);
+  // API data is stored in the state
+  const [data, setData] = useState([]);
+  
+  // Get the system language
+  const systemLanguage = language(props);
 
     // Get today's date
     let today = new Date();
@@ -65,6 +69,9 @@ function MealList(props) {
 
 // Component for the list entries
 function ListEntry(props) {
+  // Get the system language
+  const systemLanguage = language(props);
+  
     const date = new Date(props.group.tag);
     const options = { 
         weekday: 'long', 
@@ -73,7 +80,7 @@ function ListEntry(props) {
         day: 'numeric' 
     };
 
-    const formattedDate = date.toLocaleDateString('de-DE', options);
+    const formattedDate = date.toLocaleDateString(`${systemLanguage}-DE`, options);
     
     // Map the items to the description and price
     return (

@@ -11,8 +11,8 @@ import Paper from '@mui/material/Paper';
 import { createTheme } from '@mui/material/styles';
 import { useEffect, useState } from "react";
 
-// Labels
-const labels = require('../../public/assets/json/json_en/labels.json');
+// Language
+import language from './api/Language';
 
 // Toast Notifications
 import 'react-toastify/dist/ReactToastify.css';
@@ -20,8 +20,13 @@ import { ToastContainer } from 'react-toastify';
 import { toast } from "react-toastify";
 
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps, props }) {
   const [value, setValue] = React.useState(0); // Bottom Navigation
+  const systemLanguage = language(props);
+
+  // Get the labels for the current language
+  const labels = require(`../../public/assets/json/json_${systemLanguage}/labels.json`);
+
 
   useEffect(() => {
     // Check if the user is connected to the internet
@@ -30,7 +35,7 @@ export default function App({ Component, pageProps }) {
       toast(`${labels.LBL_CACHEDDATA}`, { hideProgressBar: true, autoClose: 2000, type: 'error' });
     }
   }, []);
-
+  
   return (
     <>
       <Head>
@@ -61,7 +66,7 @@ export default function App({ Component, pageProps }) {
         <meta name="theme-color" content="#317EFB" />
       </Head>
       <ToastContainer />
-      <Component {...pageProps} />
+      <Component {...pageProps}/>
 
       {/* Bottom Navigation, only visible on mobile size */}
       <div className='bottomNav'>

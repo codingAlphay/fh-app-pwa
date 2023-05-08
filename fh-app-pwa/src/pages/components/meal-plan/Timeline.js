@@ -1,8 +1,11 @@
 import React from 'react';
 import styles from '@/styles/Meal.module.css';
+import language from '../../api/Language';
+
 
 function Timeline(props) {
     let today = new Date();
+    const systemLanguage = language(props);
 
     // Get the day of the week (0 = Sunday, 1 = Monday, etc.)
     let dayOfWeek = today.getDay();
@@ -17,8 +20,8 @@ function Timeline(props) {
 
     // Format the dates as "dd.mm.yyyy"
     let options = { day: '2-digit', month: 'long' };
-    let firstDayOfWeekFormatted = firstDayOfWeek.toLocaleString('de-DE', options);
-    let lastDayOfWeekFormatted = lastDayOfWeek.toLocaleDateString('de-DE', options);
+    let firstDayOfWeekFormatted = firstDayOfWeek.toLocaleString(`${systemLanguage}-DE`, options);
+    let lastDayOfWeekFormatted = lastDayOfWeek.toLocaleDateString(`${systemLanguage}-DE`, options);
 
     return (
         <div className='flex justify-around items-center pb-4 mx-24 pt-16 font-bold'>
