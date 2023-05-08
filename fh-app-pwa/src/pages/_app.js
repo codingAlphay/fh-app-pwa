@@ -10,6 +10,8 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Paper from '@mui/material/Paper';
 import { createTheme } from '@mui/material/styles';
 import { useEffect, useState } from "react";
+import { Sidemenu } from './components/sidemenu/Sidemenu';
+import Header from './components/Header';
 
 
 export default function App({ Component, pageProps }) {
@@ -46,6 +48,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Component {...pageProps} />
 
+    
       {/* Bottom Navigation, only visible on mobile size */}
       <div className='bottomNav'>
         <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
@@ -76,6 +79,7 @@ export default function App({ Component, pageProps }) {
           </BottomNavigation>
         </Paper>
       </div>
+
     </>
   
   );
