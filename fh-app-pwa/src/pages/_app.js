@@ -1,5 +1,6 @@
 import '@/styles/globals.css';
 import '@/styles/calendar.css';
+import '@/styles/fonts.css'
 import Head from 'next/head';
 import * as React from 'react';
 
