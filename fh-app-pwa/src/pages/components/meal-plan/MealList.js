@@ -57,7 +57,7 @@ function MealList(props) {
       }, []);  
   
     return (
-      <div className='mx-16'> 
+      <div className='mx-8'> 
         {/* Map the grouped data to the ListEntry component */}
         {groupedData.map((group, index) => (
           <ListEntry group={group} key={index} />
@@ -84,13 +84,13 @@ function ListEntry(props) {
     
     // Map the items to the description and price
     return (
-        <div className='my-16'>
-            <h2 className='text-12 text-green font-bold'>{formattedDate.toLocaleUpperCase()}</h2>
+        <div className='my-8'>
+            <h2 className='font-bold text-maintitle-course text-green mt-0.5 mb-1.5'>{formattedDate.toLocaleUpperCase()}</h2>
             {props.group.items.map((item, index) => (
                 <div className='flex pb-4'>
                     <div className={styles.line}>
                         <p className='leading-6'>{item.name.split("\n")[0]}</p>
-                        <span className='font-extrabold text-grey'>{item.name.split("\n")[1]}</span>
+                        <span className='font-extrabold opacity-40'>{item.name.split("\n")[1]}</span>
                     </div>
                     <div className={styles.price}>
                         <p>{item.price}</p>
