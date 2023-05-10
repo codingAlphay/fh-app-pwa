@@ -13,7 +13,7 @@ import Paper from '@mui/material/Paper';
 import { createTheme } from '@mui/material/styles';
 import { useEffect, useState } from "react";
 import { Sidemenu } from './components/sidemenu/Sidemenu';
-import Header from './components/Header';
+
 
 // Language
 import language from './api/Language';
