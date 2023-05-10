@@ -2,14 +2,15 @@ import React from 'react';
 import { useEffect, useState } from "react";
 import handler from '../../api/fetch';
 import CalendarModule from 'react-calendar'
+import Course from '../Course';
 
 function Calendar(props) {
   // API data is stored in the state
   const [allLectures, setAllLectures] = useState([]);
+  // Matching lectures of a picked date stored in the state 
   const [selectedLectures, setSelectedLectures] = useState([]);
-  
-  const [value, onChange] = useState(new Date());
-
+  // Picked date stored in the state
+  const [date, setDate] = useState(new Date());
 
   useEffect(() => {
     async function fetchData() {
@@ -38,34 +39,93 @@ function Calendar(props) {
     fetchData()
   }, []);
 
+  // Find matching lectures for the down part and add label to the calendar
   useEffect(() => {
-    onDateSelect(new Date());
+    checkForLectures(new Date())
+    addLabels()
   }, [allLectures]);
   
-  async function onDateSelect(date) {
+  // Will be triggered everytime the user picks a date
+  function refreshCalendar(date) {
     let selected = new Date(date)
-    onChange(selected)
-    
-    let compareString = selected.getFullYear() + '-' + ('0' + (selected.getMonth() + 1)).slice(-2) + '-' + ('0' + selected.getDate()).slice(-2)
-    checkForLectures(compareString)
+    setDate(selected)
+    checkForLectures(selected)
+    //addLabels() disabled becaus adds multiple timesq
   }
-
-  async function checkForLectures(selectedDate) {
-    const lecturesOfTheDate = allLectures.filter(item => item.date === selectedDate);
+  
+  // Check for lectures on a picked date
+  function checkForLectures(date) {
+    let compareString = date.getFullYear() + '-' + ('0' + (date.getMonth() + 1)).slice(-2) + '-' + ('0' + date.getDate()).slice(-2)
+    const lecturesOfTheDate = allLectures.filter(item => item.date === compareString);
     setSelectedLectures(lecturesOfTheDate)
-    console.log(allLectures)
-    console.log(lecturesOfTheDate)
   }
-  async function determineSemesterForApi() {
 
+  // Simple function to receive de-DE locale date string
+  function convertDateToDE(enDate) {
+    const date = new Date(enDate)
+    const options = { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' };
+    const formattedDate = date.toLocaleDateString('de-DE', options);
+    return formattedDate
   }
+
+  // Adds labels (tiles) underneath the days in the calendar
+  async function addLabels() {
+    for (const key in allLectures) {
+      if (allLectures.hasOwnProperty.call(allLectures, key)) {
+        const { date } = allLectures[key]
+        const deDate = convertDateToDE(date)
+        const field = document.querySelector('[aria-label="'+deDate+'"]')
+        if(field) {
+          const probableExistingContainer = document.getElementById(deDate)
+          const courseInfo = allLectures[key].info && allLectures[key].info
+
+          if(probableExistingContainer) {
+            if(courseInfo == "virtuelle Präsenz") {
+              const virtualLectureElement = document.createElement("div")
+              virtualLectureElement.classList = "h-[3px] w-[7px] rounded-full mx-[2px] bg-black dark:bg-white"
+              probableExistingContainer.appendChild(virtualLectureElement)
+            } else if(courseInfo == "Klausur") {
+              const examLectureElement = document.createElement("div")
+              examLectureElement.classList = "h-[3px] w-[7px] rounded-full mx-[2px] bg-red"
+              probableExistingContainer.appendChild(examLectureElement)
+            } else {
+              const classicLectureElement = document.createElement("div")
+              classicLectureElement.classList = "h-[3px] w-[7px] rounded-full mx-[2px] bg-blue"
+              probableExistingContainer.appendChild(classicLectureElement)
+            }
+          } else {
+            const container = document.createElement("div")
+            container.classList = "absolute left-1/2 -translate-x-1/2 bottom-2 flex justify-center "
+            container.id = deDate
+
+            if(courseInfo == "virtuelle Präsenz") {
+              const virtualLectureElement = document.createElement("div")
+              virtualLectureElement.classList = "h-[3px] w-[7px] rounded-full mx-[2px] bg-black dark:bg-white"
+              container.appendChild(virtualLectureElement)
+            } else if(courseInfo == "Klausur") {
+              const examLectureElement = document.createElement("div")
+              examLectureElement.classList = "h-[3px] w-[7px] rounded-full mx-[2px] bg-red"
+              container.appendChild(examLectureElement)
+            } else {
+              const classicLectureElement = document.createElement("div")
+              classicLectureElement.classList = "h-[3px] w-[7px] rounded-full mx-[2px] bg-blue"
+              container.appendChild(classicLectureElement)
+            }
+            
+            field.parentElement.appendChild(container)
+          }
+        }
+      }
+    }
+  }
+
     return (
-        <div>
+        <div className='mb-16'>
           <div className='text-center'>
             <CalendarModule 
               locale='de-DE'
-              onChange={(e) => onDateSelect(e)}
-              value={value}
+              onChange={(e) => refreshCalendar(e)}
+              value={date}
               minDetail={"month"}
               next2Label={null}
               nextLabel={
@@ -79,16 +139,14 @@ function Calendar(props) {
                   <path d="M10.978 9.001L10.978 5.75C10.978 5.338 10.643 5 10.226 5C10.038 5 9.851 5.071 9.708 5.206C7.933 6.891 4.763 9.898 3.312 11.275C3.112 11.464 3 11.727 3 12C3 12.274 3.112 12.536 3.312 12.725C4.763 14.102 7.933 17.11 9.708 18.793C9.851 18.929 10.038 19 10.226 19C10.643 19 10.978 18.663 10.978 18.25L10.978 14.999L19.998 14.999C20.529 14.999 21 14.529 21 13.999L21 10.001C21 9.471 20.529 9.001 19.998 9.001L10.978 9.001Z" fill="#008E4D"/>
                 </svg>
               }
+              tileClassName={({ activeStartDate, date, view }) => view === 'month' && date.getDay() === 0 ? 'sunday' : null}
+              onActiveStartDateChange={({ action, activeStartDate, value, view }) => addLabels()}
               />
           </div>
             {
-                selectedLectures.map((item) => (
-                    <div>
-                        <h1>{item.courseName}</h1>
-                        <p>{item.lecturer}</p>
-                        <p>{item.date}</p>
-                    </div>
-                ))
+              selectedLectures.map((item) => (
+                <Course course={item}/>
+              ))
             }
         </div>
     );

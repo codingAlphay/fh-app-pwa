@@ -5,7 +5,7 @@ import styles from '@/styles/Home.module.css';
 
 // Components
 import Calendar from './components/schedule/Calendar';
-import Header from './components/Header';
+import Header from './components/layout/Header';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,7 +18,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header headline={"LBL_CAFE"} subheadline={"Welcome to our"}/>
+      <Header headline={"LBL_INFOSCREEN"} subheadline={"WEB.vzB.21"}/>
       <div className='mx-4'>
         <Calendar />
       </div>
