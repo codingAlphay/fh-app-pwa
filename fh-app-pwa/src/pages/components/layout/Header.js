@@ -1,9 +1,12 @@
 import React from 'react';
 import styles from '@/styles/Header.module.css';
 import Menu from './sidemenu/Menu';
-const data = require('../../../../public/assets/json/json_en/labels.json');
+import language from '../api/Language';
 
 function Header(props) {
+    const systemLanguage = language(props);
+    const labels = require(`../../../public/assets/json/json_${systemLanguage}/labels.json`);
+
     var hl = "";
     if(props.headline != null){
       hl = data[props.headline];
