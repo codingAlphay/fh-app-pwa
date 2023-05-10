@@ -2,10 +2,14 @@ import React from 'react';
 import styles from '@/styles/Meal.module.css';
 import { useEffect, useState } from "react";
 import handler from '../../api/fetch';
+import language from '../../api/Language';
 
 function MealList(props) {
-    // API data is stored in the state
-    const [data, setData] = useState([]);
+  // API data is stored in the state
+  const [data, setData] = useState([]);
+  
+  // Get the system language
+  const systemLanguage = language(props);
 
     // Get today's date
     let today = new Date();
@@ -53,7 +57,7 @@ function MealList(props) {
       }, []);  
   
     return (
-      <div className={styles.main}> 
+      <div className='mx-16'> 
         {/* Map the grouped data to the ListEntry component */}
         {groupedData.map((group, index) => (
           <ListEntry group={group} key={index} />
@@ -65,6 +69,9 @@ function MealList(props) {
 
 // Component for the list entries
 function ListEntry(props) {
+  // Get the system language
+  const systemLanguage = language(props);
+  
     const date = new Date(props.group.tag);
     const options = { 
         weekday: 'long', 
@@ -73,17 +80,17 @@ function ListEntry(props) {
         day: 'numeric' 
     };
 
-    const formattedDate = date.toLocaleDateString('de-DE', options);
+    const formattedDate = date.toLocaleDateString(`${systemLanguage}-DE`, options);
     
     // Map the items to the description and price
     return (
-        <div className={styles.listEntry}>
-            <h2>{formattedDate.toLocaleUpperCase()}</h2>
+        <div className='my-16'>
+            <h2 className='text-12 text-green font-bold'>{formattedDate.toLocaleUpperCase()}</h2>
             {props.group.items.map((item, index) => (
-                <div className={styles.description}>
+                <div className='flex pb-4'>
                     <div className={styles.line}>
-                        <p>{item.name.split("\n")[0]}</p>
-                        <span>{item.name.split("\n")[1]}</span>
+                        <p className='leading-6'>{item.name.split("\n")[0]}</p>
+                        <span className='font-extrabold text-grey'>{item.name.split("\n")[1]}</span>
                     </div>
                     <div className={styles.price}>
                         <p>{item.price}</p>
@@ -93,5 +100,7 @@ function ListEntry(props) {
         </div>
     );
 }
+
+
 
 export default MealList;

@@ -1,0 +1,35 @@
+[
+    {
+      "datum": "25.04.2023",
+      "von": "10:00",
+      "bis": "11:30",
+      "gruppennummer": 1,
+      "lehrveranstaltung": "IT-Recht",
+      "lektor": "Mag.iur. Claus Volke",
+      "raum": "B.0.14",
+      "pkz": "2110653142",
+      "lvtyp_code": "ILV"
+    },
+    {
+      "datum": "31.05.2023",
+      "von": "10:00",
+      "bis": "11:30",
+      "gruppennummer": 1,
+      "lehrveranstaltung": "IT-Security (E)",
+      "lektor": "Mathias Gschwandtner, BSc, MSc",
+      "raum": null,
+      "pkz": "2110653142",
+      "lvtyp_code": "ILV"
+    },
+    {
+      "datum": "21.06.2023",
+      "von": "13:00",
+      "bis": "13:45",
+      "gruppennummer": 1,
+      "lehrveranstaltung": "Serverseitige Softwareentwicklung & Data Management",
+      "lektor": "Volkmar Rigo, BSc, MSc",
+      "raum": null,
+      "pkz": "2110653142",
+      "lvtyp_code": "ILV"
+    }
+]
