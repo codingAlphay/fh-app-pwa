@@ -1,12 +1,14 @@
 import '@/styles/globals.css';
+import '@/styles/calendar.css';
+import '@/styles/fonts.css'
 import Head from 'next/head';
 import * as React from 'react';
 
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+import CalenderMonth from '@mui/icons-material/CalendarMonth';
+import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import Paper from '@mui/material/Paper';
 import { createTheme } from '@mui/material/styles';
 import { useEffect, useState } from "react";
@@ -27,7 +29,7 @@ export default function App({ Component, pageProps, props }) {
   // Get the labels for the current language
   const labels = require(`../../public/assets/json/json_${systemLanguage}/labels.json`);
 
-
+  const [view, setView] = useState()
   useEffect(() => {
     // Check if the user is connected to the internet
     if (!navigator.onLine) {
@@ -63,7 +65,7 @@ export default function App({ Component, pageProps, props }) {
           sizes="32x32"
           />
         <link rel="apple-touch-icon" href="/apple-icon.png"></link>
-        <meta name="theme-color" content="#317EFB" />
+        <meta name="theme-color" content="#008E4D" />
       </Head>
       <ToastContainer />
       <Component {...pageProps}/>
@@ -83,18 +85,18 @@ export default function App({ Component, pageProps, props }) {
                     fontSize: theme => theme.typography.caption,
                     transition: 'none',
                     fontWeight: 'bold',
-                    lineHeight: '20px'
+                    lineHeight: '20px',
+                    fontFamily: 'Oswald'
                   },
                   '& .MuiSvgIcon-root, & .MuiBottomNavigationAction-label': {
-                    color: theme => theme.palette.primary.main
+                    color: "#008E4D" //theme => theme.palette.primary.main
                   }
                 }
               }}
             >
-            <BottomNavigationAction label="Add User" icon={<RestoreIcon />}/>
-            <BottomNavigationAction label="Remove User" icon={<LocationOnIcon />} />
-            <BottomNavigationAction label="Add Beer" icon={<FavoriteIcon />} />
-            <BottomNavigationAction label="Drink Beer" icon={<LocationOnIcon />} />
+            <BottomNavigationAction label="Calendar" icon={<CalenderMonth />} href='/'/>
+            <BottomNavigationAction label="Menu" icon={<RestaurantMenuIcon />} href='/mealplan' />
+            <BottomNavigationAction label="Messages" icon={<NotificationsActiveIcon />} href='/messages'/>
           </BottomNavigation>
         </Paper>
       </div>
