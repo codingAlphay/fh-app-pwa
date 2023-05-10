@@ -24,8 +24,8 @@ function Menu() {
         >
           <div className='flex flex-col mt-12 mb-12 h-auto pb-8'>
             <div className={`flex m-12 ${styles.headerboxNav}`}>
-              <RxAvatar size={80} />
-              <div className={`pr-32 ${styles.headerNav}`}>
+              <img src="/icons/menuicons/userimage.svg" alt="User Image Icon" />
+              <div className={`pr-40 ${styles.headerNav}`}>
                 <h2>Alpay Aksu</h2>
                 <h1>Bonjour</h1>
               </div>
