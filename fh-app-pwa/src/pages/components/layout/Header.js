@@ -13,13 +13,14 @@ function Header(props) {
     }
 
     return (
-      <>
+      <div className={styles.headerbox}>
         <div className="mx-8 mt-14 mb-4">
             <h2 className='text-maintitle-column text-green'>{props.subheadline}</h2>
             <h1 className='text-maintitle uppercase font-bold'>{hl}</h1>
         </div>
         <div className={styles.headerbox_icon}><Menu/></div>
-      </>
+      </div>
+
     );
 }
 
