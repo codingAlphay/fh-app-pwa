@@ -3,6 +3,7 @@
   "LBL_BEGINNERSGUIDE": "Beginners Guide",
   "LBL_INFOSCREEN": "Schedule",
   "LBL_CAFE": "Meal",
+  "GREETING": "Bonjour",
   "LBL_MESSAGES": "Messages",
   "LBL_EXAMS": "Exams",
   "LBL_BGUIDE": "Beginner's Guide",
@@ -133,7 +134,7 @@
   "LBL_EVAL_SUBMITTING": "Submitting...",
   "LBL_EVAL_VALID_UNTIL": "Valid until: ",
   "LBL_EVAL_CANCEL": "Cancel",
-  "LBL_OEH": "Students' Association",
+  "LBL_OEH": "Student's Association",
   "LBL_OEH_HEADER": "Further information or documents you can find under following links:",
   "LBL_OEH_CONTENT": [
     {
