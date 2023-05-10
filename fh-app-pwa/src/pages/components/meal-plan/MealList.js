@@ -27,11 +27,17 @@ function MealList(props) {
     let lastDayOfWeekFormatted = lastDayOfWeek.toLocaleDateString('de-DE', options);
 
     useEffect(() => {
+    // Fetch data from API
     async function fetchData() {
+      try {
         // Fetch data from API
         const newData = await handler(`cafeteria/getcafeteriadata;from=${firstDayOfWeekFormatted};until=${lastDayOfWeekFormatted}`);
         setData(newData.cafeteriaData);
-    }
+      } catch (error) {
+          console.error('Error fetching data', error);
+          // handle the error, such as showing a message to the user
+        }
+      }
     fetchData();
     }, []);
 
@@ -44,17 +50,18 @@ function MealList(props) {
           lastGroup.items.push({ name: item.name, price: item.preis });
         }
         return acc;
-      }, []);    
-    
-      return (
-        <div className={styles.main}> 
-          {/* Map the grouped data to the ListEntry component */}
-          {groupedData.map((group, index) => (
-            <ListEntry group={group} key={index} />
-          ))}
-        </div>
-      );
+      }, []);  
+  
+    return (
+      <div className={styles.main}> 
+        {/* Map the grouped data to the ListEntry component */}
+        {groupedData.map((group, index) => (
+          <ListEntry group={group} key={index} />
+        ))}
+      </div>
+    );
 }
+
 
 // Component for the list entries
 function ListEntry(props) {
@@ -70,13 +77,13 @@ function ListEntry(props) {
     
     // Map the items to the description and price
     return (
-        <div className={styles.listEntry} key={props.key}>
+        <div className={styles.listEntry}>
             <h2>{formattedDate.toLocaleUpperCase()}</h2>
             {props.group.items.map((item, index) => (
                 <div className={styles.description}>
                     <div className={styles.line}>
-                        <p key={index}>{item.name.split("\n")[0]}</p>
-                        <span key={index}>{item.name.split("\n")[1]}</span>
+                        <p>{item.name.split("\n")[0]}</p>
+                        <span>{item.name.split("\n")[1]}</span>
                     </div>
                     <div className={styles.price}>
                         <p>{item.price}</p>

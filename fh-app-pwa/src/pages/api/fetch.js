@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 // handler to fetch data from the API
 export default async function handler(endpoint) {
+  try {
     const response = await fetch('https://webproxy.fh-kufstein.ac.at/' + endpoint, {
         method: "GET",
         headers: {
@@ -13,4 +14,8 @@ export default async function handler(endpoint) {
             
     const data = await response.json();
     return data;
+  } catch (error) {
+    console.log(error);
+    return error;
   }
+}
