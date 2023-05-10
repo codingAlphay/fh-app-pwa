@@ -1,4 +1,6 @@
 import '@/styles/globals.css';
+import '@/styles/calendar.css';
+import '@/styles/fonts.css'
 import Head from 'next/head';
 import * as React from 'react';
 
@@ -22,7 +24,7 @@ import { toast } from "react-toastify";
 
 export default function App({ Component, pageProps }) {
   const [value, setValue] = React.useState(0); // Bottom Navigation
-
+  const [view, setView] = useState()
   useEffect(() => {
     // Check if the user is connected to the internet
     if (!navigator.onLine) {

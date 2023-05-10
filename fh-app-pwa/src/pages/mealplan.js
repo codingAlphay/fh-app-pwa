@@ -1,7 +1,7 @@
 import React from 'react';
 
 // components
-import Header from './components/Header';
+import Header from './components/layout/Header';
 import MealList from './components/meal-plan/MealList';
 import Timeline from './components/meal-plan/Timeline';
 
