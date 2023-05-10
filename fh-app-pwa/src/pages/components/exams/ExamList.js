@@ -12,7 +12,7 @@ export default function ExamList({exam}, props) {
     const student = studentinfo[studentinfo.length - 1].jg_kurzbez;
 
     const jg = student;
-    const group = "1"
+    const group = ""
     const [title, type] = course.lehrveranstaltung.split(' / ');
     const room = course.raum;
     const lecturer = course.lektor;
