@@ -24,11 +24,12 @@ function Timeline(props) {
     let lastDayOfWeekFormatted = lastDayOfWeek.toLocaleDateString(`${systemLanguage}-DE`, options);
 
     return (
-        <div className='flex justify-around items-center pb-4 mx-24 pt-16 font-bold'>
+        <div className='flex justify-around items-center pt-4 mx-12 font-bold'>
             <p>{firstDayOfWeekFormatted.toLocaleUpperCase()}</p>
             <hr className='w-1/2 border-2 border-green'/>
             <p>{lastDayOfWeekFormatted.toLocaleUpperCase()}</p>
         </div>
+
     );
 }
 
