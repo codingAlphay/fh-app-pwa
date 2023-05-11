@@ -13,7 +13,7 @@ export default function Menu() {
   
   return (
     <>
-      <div onClick={() => handleClick()} className='z-50 dark:bg-green'>
+      <div onClick={() => handleClick()} className={`z-50 dark:bg-green ${menuVisible && 'fixed right-8'}`}>
         <BiMenuAltRight size={40} />
       </div>
 
