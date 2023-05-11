@@ -9,6 +9,15 @@ module.exports = {
     extend: {
       fontFamily: {
         'sans': ['Oswald', ...defaultTheme.fontFamily.sans],
+      },  
+      colors: {
+        'black': '#1E1E1E',
+        'htmlblack': '#121212',
+        'white': '#FFFFFF',
+        'red': '#FB3131',
+        'green': '#008E4D',
+        'blue': '#2CC5DA',
+        'gray': '#D2D2D2'
       },
       fontSize: {
         'base': '1.6rem',
@@ -21,14 +30,6 @@ module.exports = {
         'menutitle': '1.25rem',
         'maintitle': '2rem', 
       },
-    },
-    colors: {
-      'black': '#1E1E1E',
-      'white': '#FFFFFF',
-      'red': '#FB3131',
-      'green': '#008E4D',
-      'blue': '#2CC5DA',
-      'gray': '#D2D2D2'
     },
     plugins: [],
   },

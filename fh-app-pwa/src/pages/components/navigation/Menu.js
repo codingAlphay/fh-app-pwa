@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Sidemenu from './Sidemenu';
+import Menucontent from './Menucontent';
 import { BiMenuAltRight } from 'react-icons/bi';
 
 export default function Menu() {
@@ -33,7 +33,7 @@ export default function Menu() {
           </div>
           { menuVisible && 
             <div className=''>
-              <Sidemenu />
+              <Menucontent />
             </div>
           }
         </div>

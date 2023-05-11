@@ -1,5 +1,5 @@
 import React from 'react';
-import Menu from '../sidemenu/Menu';
+import Menu from '../navigation/Menu';
 import language from '../../api/Language';
 
 function Header(props) {
