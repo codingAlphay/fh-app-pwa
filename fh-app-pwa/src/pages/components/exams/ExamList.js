@@ -45,9 +45,9 @@ export default function ExamList({exam}, props) {
     const formattedDate = dateObject.toLocaleDateString(`${systemLanguage}-DE`, options);
 
     return (
-        <>
+        <div className="mx-4">
         <h2 className='font-bold text-maintitle-course'>{formattedDate.toLocaleUpperCase()}</h2>
-        <div className="flex mb-8 mt-2 mx-2">
+        <div className="flex mb-8 mt-2">
             {/* workaround: Tailwind isn't generating the classes properly when appending the classes dynamically with template literals */}
             <p className="text-red after:bg-red border-red text-green after:bg-green border-green after:bg-black after:bg-white border-white border-black text-blue after:bg-blue border-blue hidden">Course</p>
 
@@ -78,6 +78,6 @@ export default function ExamList({exam}, props) {
                 </div>
             }
         </div>
-        </>
+        </div>
     )
 }

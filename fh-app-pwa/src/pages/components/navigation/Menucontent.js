@@ -1,9 +1,15 @@
 import React from 'react'
-const data = require('../../../../public/assets/json/json_en/labels.json');
 import Link from 'next/link';
 import { useRouter } from "next/router"
+import language from '../../api/Language';
 
-const Sidemenu = () => {
+
+const Sidemenu = (props) => {
+  
+  // Get the system language
+  const systemLanguage = language(props);
+  const data = require(`../../../../public/assets/json/json_${systemLanguage}/labels.json`);
+
   const router = useRouter()
   const path = router.pathname
   const listClass = 'text-menutitle text-black font-bold tracking-wide uppercase my-5 flex grid grid-cols-10 items-center';
@@ -20,8 +26,8 @@ const Sidemenu = () => {
         <Link href={'/'}>
           <li className={listClass}><img src="/icons/menuicons/bell.svg" alt="Message Icon" className='col-span-2'/><span className={`col-span-8 ${path == "/EDIT" && 'text-green'}`}>{data["LBL_MESSAGES"]}</span></li>
         </Link>
-        <Link href={'/'}>
-          <li className={listClass}><img src="/icons/menuicons/exams.svg" alt="Exams Icon" className='col-span-2'/><span className={`col-span-8 ${path == "/EDIT" && 'text-green'}`}>{data["LBL_EXAMS"]}</span></li>
+        <Link href={'/examOverview'}>
+          <li className={listClass}><img src="/icons/menuicons/exams.svg" alt="Exams Icon" className='col-span-2'/><span className={`col-span-8 ${path == "/examOverview" && 'text-green'}`}>{data["LBL_EXAMS"]}</span></li>
         </Link>
         <Link href={'/'}>
           <li className={listClass}><img src="/icons/menuicons/guide.svg" alt="Beginner's Guide Icon" className='col-span-2'/><span className={`col-span-8 ${path == "/EDIT" && 'text-green'}`}>{data["LBL_BGUIDE"]}</span></li>
