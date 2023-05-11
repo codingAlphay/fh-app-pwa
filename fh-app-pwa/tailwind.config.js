@@ -18,7 +18,8 @@ module.exports = {
         'time-span': '.65rem', 
         'maintitle-column': '.75rem',
         'maintitle-course': '1.125rem',
-        'maintitle': '2rem',
+        'menutitle': '1.25rem',
+        'maintitle': '2rem', 
       },
     },
     colors: {

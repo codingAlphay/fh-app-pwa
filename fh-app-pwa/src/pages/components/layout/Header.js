@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '@/styles/Header.module.css';
 import Menu from '../sidemenu/Menu';
 import language from '../../api/Language';
 
@@ -13,12 +12,12 @@ function Header(props) {
     }
 
     return (
-      <div className={styles.headerbox}>
-        <div className="mx-8 mt-14 mb-4">
+      <div className="flex items-center justify-between mx-8 mt-12 mb-8">
+        <div>
             <h2 className='text-maintitle-column text-green'>{props.subheadline}</h2>
-            <h1 className='text-maintitle uppercase font-bold'>{hl}</h1>
+            <h1 className='-mt-1 font-bold uppercase text-maintitle'>{hl}</h1>
         </div>
-        <div className={styles.headerbox_icon}><Menu/></div>
+        <Menu/>
       </div>
 
     );
