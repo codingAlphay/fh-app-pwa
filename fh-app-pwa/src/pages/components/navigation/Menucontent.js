@@ -35,7 +35,7 @@ const Sidemenu = (props) => {
         <Link href={'/'}>
           <li className={listClass}><img src="/icons/menuicons/association.svg" alt="Student's Association Icon" className='col-span-2'/><span className={`col-span-8 ${path == "/EDIT" && 'text-green'}`}>{data["LBL_OEH"]}</span></li>
         </Link>
-        <Link href={'/'}>
+        <Link href={'/grades'}>
           <li className={listClass}><img src="/icons/menuicons/grades.svg" alt="Grades Icon" className='col-span-2'/><span className={`col-span-8 ${path == "/EDIT" && 'text-green'}`}>{data["LBL_GRADES"]}</span></li>  
         </Link>
         <Link href={'/'}>
