@@ -1,0 +1,165 @@
+{
+  "LBL_SETTINGS": "Einstellungen",
+  "LBL_BEGINNERSGUIDE": "Beginners Guide",
+  "LBL_INFOSCREEN": "Vorlesungsplan",
+  "LBL_CAFE": "Diner",
+  "LBL_MESSAGES": "Nachrichten",
+  "LBL_EXAMS": "Klausuren übersicht",
+  "LBL_BGUIDE": "Beginner's Guide",
+  "LBL_EVALUATION": "Evaluierung",
+  "LBL_BGUIDE_HEADER": "Weitere Informationen bzw. Dokumente finden Sie unter folgenden Links:",
+  "LBL_BGUIDE_CONTENT": [
+    {
+      "LINK": "https://checkin.fh-kufstein.ac.at",
+      "AFTER_LINK": "für:",
+      "POINTS": [
+        "Inskriptionsbestätigung",
+        "Zeugnis",
+        "Parkschein",
+        "News",
+        "Lehrendenportal"
+      ],
+      "AFTER_POINTS": "Geben Sie für die Anmeldung Ihr PKZ und Ihr Passwort ein."
+    },
+    {
+      "LINK": "https://login.microsoftonline.com",
+      "AFTER_LINK": "für:",
+      "POINTS": [
+        "Webmail",
+        "Office 365",
+        "OneDrive"
+      ],
+      "AFTER_POINTS": "Geben Sie für die Anmeldung Ihre PKZ gefolgt von @fh-kufstein.ac.at und Ihr Passwort ein."
+    },
+    {
+      "LINK": "https://weblearn.fh-kufstein.ac.at",
+      "AFTER_LINK": "für:",
+      "POINTS": [
+        "Kursdokumente",
+        "Bibliothek"
+      ],
+      "AFTER_POINTS": "Geben Sie für die Anmeldung Ihr PKZ und Ihr Passwort ein."
+    }
+  ],
+  "LBL_BGUIDE_FOOTER": "Wenn Sie weitere Fragen haben, kontaktieren Sie bitte die jeweilige Ansprechperson.",
+  "LBL_GRADES": "Notenübersicht",
+  "LBL_LECTURER": "Lektor",
+  "LBL_ROOM": "Raum",
+  "LBL_PASSWORDINPUT": "Passwort",
+  "LBL_PASSWORD_STRING": "Passwort eingeben",
+  "LBL_PASSWORD_MESSAGE": "Du musst dein Passwort angeben um diesen Bereich zu sehen",
+  "LBL_SEMESTER": "Semester",
+  "BTN_COMMIT": "Bestätigen",
+  "MRK_EXAM": "KLAUSUR",
+  "BTN_TODAY": "Heute",
+  "BTN_MONTH": "Monat",
+  "BTN_WEEK": "Woche",
+  "LBL_PERSNR": "Personenkennzahl",
+  "LBL_LECTORNAME": "Lektorname",
+  "LBL_PASSWORD": "Passwort",
+  "LBL_GROUP": "Gruppe",
+  "LBL_FILTER_TITLE": "Filtereinstellungen",
+  "LBL_PKZ": "PKZ",
+  "LBL_STUDY": "Studiengang",
+  "BTN_LOGIN": "Login",
+  "BTN_APPLY": "Anwenden",
+  "LBL_MAINFOOD": "Hauptgericht 4€",
+  "LBL_SOUP": "Suppe 2€",
+  "LBL_SALAD": "Salat 2,20€",
+  "LBL_STUDENT": "Student",
+  "LBL_YESTERDAY": "Gestern",
+  "LBL_NOMESSAGE": "Keine Nachrichten",
+  "NOLECTURES": "Keine Veranstaltungen",
+  "ERROR_LOGIN": "Fehler beim Login!",
+  "MESSAGE_LOGIN": "Bitte die richtige PKZ und Password eingeben!",
+  "MESSAGE_LOGIN_LEC": "Bitte geben Sie Ihren Namen ein!",
+  "MESSAGE_PW_LOGIN": "Bitte Passwort eingeben!",
+  "LBL_SEMESTER_HEADER_SUMMER": "Sommersemester",
+  "LBL_SEMESTER_HEADER_WINTER": "Wintersemester",
+  "LBL_LANGUAGE": "Sprache",
+  "LBL_EFFECTS": "Effektschema",
+  "LBL_PUSH": "Benachrichtigung",
+  "FB_TEXT": "Hier kannst du uns Fehler oder Änderungswünsche bekannt geben. Bitte ausführlich den Fehler bzw. das Anliegen beschreiben. Du kannst uns natürlich auch für etwas was dir in der neuen App besonders gefällt loben. :)",
+  "FB_MAIL": "Studentenmail Adresse",
+  "FB_FEEDBACK": "Feedback",
+  "FB_SEND": "Feedback senden",
+  "FB_ERROR": "Beim Senden des Formulares ist ein Fehler aufgetreten!",
+  "FB_SUCCESS": "Vielen Dank, für dein Feedback!",
+  "MSG_GRADE": "Neue Note",
+  "MSG_LECTURE": "Veranstaltung verschoben",
+  "MSG_ADMIN": "Administrator",
+  "MSG_INFO": "Information",
+  "MESSAGE_NEW": "Neue Nachricht",
+  "MESSAGE_IGNORE": "Ignorieren",
+  "MESSAGE_VIEW": "Ansehen",
+  "LBL_CACHEDDATA": "Du hast keine Internetverbindung, die letzten gespeicherten Daten wurden geladen.",
+  "DAYS": {
+    "MONDAY": "Montag",
+    "TUESDAY": "Dienstag",
+    "WEDNESDAY": "Mittwoch",
+    "THURSDAY": "Donnerstag",
+    "FRIDAY": "Freitag",
+    "SATURDAY": "Samstag",
+    "SUNDAY": "Sonntag"
+  },
+  "MONTHS": {
+    "JAN": "Januar",
+    "FEB": "Februar",
+    "MAR": "März",
+    "APR": "April",
+    "MAI": "Mai",
+    "JUN": "Juni",
+    "JUL": "Juli",
+    "AUG": "August",
+    "SEP": "September",
+    "OCT": "Oktober",
+    "NOV": "November",
+    "DEC": "Dezember"
+  },
+  "DAYLABELS": [
+    "MO",
+    "DI",
+    "MI",
+    "DO",
+    "FR",
+    "SA",
+    "SO"
+  ],
+  "LBL_SYNC_ERROR": "Synchronisation nicht möglich. Prüfen Sie Ihre Datenverbindung",
+  "LBL_GENERAL_CONNECTION_ERROR": "Verbindung zum Server fehlgeschlagen!",
+  "LBL_RELOGIN_WARN": "Bitte melde dich erneut mit PKZ und Password an.",
+  "LBL_EVAL": "Evaluierung",
+  "LBL_EVAL_SUBMIT": "Senden",
+  "LBL_EVAL_SUBMITTING": "Wird gesendet...",
+  "LBL_EVAL_VALID_UNTIL": "Gültig bis: ",
+  "LBL_EVAL_CANCEL": "Abbrechen",
+  "LBL_OEH": "ÖH FH Kufstein",
+  "LBL_OEH_HEADER": "Weitere Informationen bzw. Dokumente finden Sie unter folgenden Links:",
+  "LBL_OEH_CONTENT": [
+    {
+      "LINK": "http://www.oeh-fhkufstein.at",
+      "AFTER_LINK": "für:",
+      "POINTS": [
+        "ÖH News"
+      ],
+      "AFTER_POINTS": ""
+    },
+    {
+      "LINK": "http://www.oeh-fhkufstein.at/events",
+      "AFTER_LINK": "für:",
+      "POINTS": [
+        "ÖH Events"
+      ],
+      "AFTER_POINTS": ""
+    },
+    {
+      "LINK": "http://www.oeh-fhkufstein.at/sportprogramm",
+      "AFTER_LINK": "für:",
+      "POINTS": [
+        "ÖH Sportprogramm"
+      ],
+      "AFTER_POINTS": ""
+    }
+  ],
+  "LBL_OEH_FOOTER": "Wenn Sie weitere Fragen haben, kontaktieren Sie bitte die jeweilige Ansprechperson."
+}

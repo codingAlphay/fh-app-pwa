@@ -1,0 +1,32 @@
+{
+  "success": true,
+  "message": [
+    {
+      "_id": "585131affced352cd8fc30a7",
+      "pkz": "1510653938",
+      "message": "Du hast eine neue Note (2) in Computer Networks / VO",
+      "read": false,
+      "date": "1481716143403",
+      "type": "grade",
+      "__v": 0
+    },
+    {
+      "_id": "585131eefced352cd8fc30a8",
+      "pkz": "1510653938",
+      "message": "Die Vorlesung Software Mobile / VO wurde vom 21.12.2016 13:00 auf 11.1.2017 14:45 verschoben",
+      "read": false,
+      "date": "1481716206564",
+      "type": "lecture",
+      "__v": 0
+    },
+    {
+      "_id": "585131eefced352cd8fc30a4",
+      "pkz": "1510653938",
+      "message": "Die Vorlesung Rechnungswesen / VO wurde vom 16.12.2016 8:45 auf 19.1.2016 9:30 verschoben",
+      "read": true,
+      "date": "1481457248000",
+      "type": "lecture",
+      "__v": 0
+    }
+  ]
+}
