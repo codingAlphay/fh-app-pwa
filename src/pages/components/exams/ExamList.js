@@ -44,6 +44,7 @@ export default function ExamList({exam}, props) {
 
     const formattedDate = dateObject.toLocaleDateString(`${systemLanguage}-DE`, options);
 
+    if(course)
     return (
         <div className="mx-4">
         <h2 className='font-bold text-maintitle-course'>{formattedDate.toLocaleUpperCase()}</h2>
