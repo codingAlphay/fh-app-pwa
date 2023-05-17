@@ -161,13 +161,6 @@ function Calendar(props) {
             onActiveStartDateChange={({ action, activeStartDate, value, view }) => addLabels()}
             />
         </div>
-        <div className=''>
-          {
-            selectedLectures && selectedLectures.map((item) => (
-              <Course course={item}/>
-            ))
-          }
-        </div>
       </div>
     </>
   )
