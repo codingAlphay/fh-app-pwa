@@ -1,13 +1,13 @@
 export default function Course({course}) {
-    const jg = course.jg;
-    const group = course.group;
-    const [title, type] = course.courseName.split(' / ');
-    const room = course.room;
-    const lecturer = course.lecturer;
-    const date = course.date;
-    const info = course.info; // "Klausur" or "virtuelle Präsenz"
-    const startTime = course.startTime;
-    const endTime = course.endTime;
+    const jg = course && course.jg;
+    const group = course && course.group;
+    const [title, type] = course && course.courseName.split(' / ');
+    const room = course && course.room;
+    const lecturer = course && course.lecturer;
+    const date = course && course.date;
+    const info = course && course.info; // "Klausur" or "virtuelle Präsenz"
+    const startTime = course && course.startTime;
+    const endTime = course && course.endTime;
     // to do: check the different lecture types to change the color
     function getColor() {
         if(info == "Klausur") {
