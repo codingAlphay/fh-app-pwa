@@ -7,9 +7,9 @@ import {ColorRing} from 'react-loader-spinner'
 
 function Calendar(props) {
   // API data is stored in the state
-  const [allLectures, setAllLectures] = useState([]);
+  const [allLectures, setAllLectures] = useState(null);
   // Matching lectures of a picked date stored in the state 
-  const [selectedLectures, setSelectedLectures] = useState([]);
+  const [selectedLectures, setSelectedLectures] = useState(null);
   // Picked date stored in the state
   const [date, setDate] = useState(new Date());
   // Save loading state in the state
@@ -62,7 +62,7 @@ function Calendar(props) {
   // Check for lectures on a picked date
   function checkForLectures(date) {
     let compareString = date.getFullYear() + '-' + ('0' + (date.getMonth() + 1)).slice(-2) + '-' + ('0' + date.getDate()).slice(-2)
-    const lecturesOfTheDate = allLectures.filter(item => item.date === compareString);
+    const lecturesOfTheDate = allLectures && allLectures.filter(item => item.date === compareString);
     setSelectedLectures(lecturesOfTheDate)
   }
 
@@ -163,7 +163,7 @@ function Calendar(props) {
         </div>
         <div className=''>
           {
-            selectedLectures.map((item) => (
+            selectedLectures && selectedLectures.map((item) => (
               <Course course={item}/>
             ))
           }
