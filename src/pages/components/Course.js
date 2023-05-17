@@ -18,6 +18,7 @@ export default function Course({course}) {
             return 'blue'
         }
     }
+    if(course)
     return (
         <div className="flex mx-2 my-8">
             {/* workaround: Tailwind isn't generating the classes properly when appending the classes dynamically with template literals */}
