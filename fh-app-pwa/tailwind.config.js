@@ -30,6 +30,15 @@ module.exports = {
         'menutitle': '1.25rem',
         'maintitle': '2rem', 
       },
+      animation: {
+        'scale-up': 'scaleUp 2s ease-in-out'
+      },
+      keyframes: {
+        scaleUp: {
+          '0%': { width: '25%' },
+          '100%': { width: '33%' },
+        }
+      },
     },
     plugins: [],
   },

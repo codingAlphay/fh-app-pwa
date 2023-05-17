@@ -14,7 +14,9 @@ function Calendar(props) {
   const [date, setDate] = useState(new Date());
   // Save loading state in the state
   const [loading, isLoading] = useState(true)
-  
+  // Save first 
+  const [firstBoot, setFirstBoot] = useState(false)
+
   useEffect(() => {
     isLoading(true)
     async function fetchData() {
@@ -123,7 +125,7 @@ function Calendar(props) {
       }
     }
   }
-
+  
   return (
     <>
       <div className={`absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ${!loading  && 'hidden'}`}>
@@ -159,11 +161,13 @@ function Calendar(props) {
             onActiveStartDateChange={({ action, activeStartDate, value, view }) => addLabels()}
             />
         </div>
+        <div className=''>
           {
             selectedLectures.map((item) => (
               <Course course={item}/>
             ))
           }
+        </div>
       </div>
     </>
   )

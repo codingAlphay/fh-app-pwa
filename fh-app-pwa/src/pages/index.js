@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Calendar from './components/schedule/Calendar';
 import Header from './components/layout/Header';
 
-
 export default function Home() {
   return (
     <>

@@ -12,7 +12,7 @@ function Header(props) {
     }
 
     return (
-      <div className="flex items-center justify-between mx-8 mt-12 mb-8">
+      <div className="flex items-center justify-between pt-6 mx-8 mb-8">
         <div>
             <h2 className='text-maintitle-column text-green'>{props.subheadline}</h2>
             <h1 className='-mt-1 font-bold uppercase text-maintitle'>{hl}</h1>
