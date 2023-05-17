@@ -1,7 +1,9 @@
 export default function Grade({grade}) {
-    const title = grade.bez;
-    const percent = grade.prozent;
-    const finalGrade = grade.note;
+    const title = grade && grade.bez;
+    const percent = grade && grade.prozent;
+    const finalGrade = grade && grade.note;
+    
+    if(grade)
     return (
         <div className="flex justify-between mx-4 my-8">
             {(title || percent) &&
