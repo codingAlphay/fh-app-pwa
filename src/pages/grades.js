@@ -1,8 +1,8 @@
 import React from 'react';
 
 // components
-import Header from './components/layout/Header';
-import Grade from './components/Grade';
+import Header from '../components/layout/Header';
+import Grade from '../components/Grade';
 
 // data mockups
 const info = require('./api/student-info-mockup.json');
@@ -13,7 +13,7 @@ function grades() {
         <>
             <Header headline={"LBL_GRADES"} subheadline={info[info.length - 1].jg_kurzbez}/>
             <div className='mx-4'>
-                {gradesData.map((grade, index) => (
+                {gradesData && gradesData.map((grade, index) => (
                     <Grade key={index} grade={grade}/>
                 ))}
             </div>

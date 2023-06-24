@@ -1,9 +1,9 @@
 import React from 'react';
 
 // components
-import Header from './components/layout/Header';
-import MealList from './components/mealplan/MealList';
-import Timeline from './components/mealplan/Timeline';
+import Header from '../components/layout/Header';
+import MealList from '../components/mealplan/MealList';
+import Timeline from '../components/mealplan/Timeline';
 
 function mealplan() {
     return (

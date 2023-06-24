@@ -1,7 +1,7 @@
 import Head from 'next/head';
 // Components
-import Calendar from './components/schedule/Calendar';
-import Header from './components/layout/Header';
+import Calendar from '../components/schedule/Calendar';
+import Header from '../components/layout/Header';
 
 export default function Home() {
   return (

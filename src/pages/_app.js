@@ -14,7 +14,7 @@ import language from './api/Language';
 import { ToastContainer } from 'react-toastify'
 import { toast } from "react-toastify"
 
-import BottomNav from './components/navigation/BottomNav';
+import BottomNav from '../components/navigation/BottomNav';
 
 export default function App({ Component, pageProps, props }) {
   const systemLanguage = language(props)
@@ -30,12 +30,14 @@ export default function App({ Component, pageProps, props }) {
       toast(`${labels.LBL_CACHEDDATA}`, { hideProgressBar: true, autoClose: 2000, type: 'error' });
     }
     async function firstLaunch() {
-      const delay = ms => new Promise(res => setTimeout(res, ms));
-      await delay(1500)
-      document.getElementById('first-loader').classList.remove("translate-y-0")
-      document.getElementById('first-loader').classList.add("-translate-y-full")
-      await delay(1500)
-      setFirstBootDone(true)
+      if(!firstBootDone) {
+        const delay = ms => new Promise(res => setTimeout(res, ms));
+        await delay(1500)
+        document.getElementById('first-loader').classList.remove("translate-y-0")
+        document.getElementById('first-loader').classList.add("-translate-y-full")
+        await delay(1500)
+        setFirstBootDone(true)
+      }
     }
     firstLaunch()
   }, []);
@@ -49,8 +51,8 @@ export default function App({ Component, pageProps, props }) {
           name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover,width=device-width" 
           />
-        <meta name="apple-mobile-web-app-capable" content="yes"></meta>
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></meta>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
         <title>FH Kufstein App</title>
@@ -77,38 +79,6 @@ export default function App({ Component, pageProps, props }) {
       } 
       <ToastContainer />
       <Component {...pageProps}/>
-    
-      {/* Bottom Navigation, only visible on mobile size */}
-      {/* <div className='bottomNav'>
-        <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
-          <BottomNavigation
-              showLabels
-              value={value}
-              className='bg-transparent'
-              onChange={(event, newValue) => {
-                setValue(newValue);
-              }}
-              sx={{
-                '& .Mui-selected': {
-                  '& .MuiBottomNavigationAction-label': {
-                    fontSize: theme => theme.typography.caption,
-                    transition: 'none',
-                    fontWeight: 'bold',
-                    lineHeight: '20px',
-                    fontFamily: 'Oswald'
-                  },
-                  '& .MuiSvgIcon-root, & .MuiBottomNavigationAction-label': {
-                    color: "#008E4D" //theme => theme.palette.primary.main
-                  }
-                }
-              }}
-            >
-            <BottomNavigationAction icon={<CalenderMonth />} href='/'/>
-            <BottomNavigationAction icon={<RestaurantMenuIcon />} href='/mealplan' />
-            <BottomNavigationAction icon={<NotificationsActiveIcon />} href='/messages'/>
-          </BottomNavigation>
-        </Paper>
-      </div> */}
       <BottomNav/>
     </>
   

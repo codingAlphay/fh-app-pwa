@@ -1,8 +1,8 @@
 import React from 'react';
 
 // components
-import Header from './components/layout/Header';
-import ExamList from './components/exams/ExamList';
+import Header from '../components/layout/Header';
+import ExamList from '../components/exams/ExamList';
 
 // data mockups
 const info = require('./api/student-info-mockup.json');
